@@ -9,8 +9,6 @@
 ## This function returns a list of functions which sets and gets the passes in matrix 
 ## and caches, sets and gets its inverse matrix.
 ## Returns: list of functions defined on the passed in matrix.
-## Throws Error if passed in matrix is not invertable.
-
 makeCacheMatrix <- function(x = matrix()) {
 
     matrixInv <- NULL
@@ -30,7 +28,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This function takes in a special matrix created by the makeCacheMatrix function
 ## and computes its inverse if it is not already computed. 
 ## Returns: inverse matrix
-
+## Throws Error if passed in matrix is not invertable.
 cacheSolve <- function(x, ...) {
     matrixInv <- x$getInv()
     if(!is.null(matrixInv)) {
